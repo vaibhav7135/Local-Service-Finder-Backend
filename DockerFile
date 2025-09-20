@@ -1,4 +1,4 @@
-# Use an official Java runtime as a parent image
+# Use official Java runtime
 FROM openjdk:17-jdk-slim
 
 # Set working directory
@@ -12,13 +12,13 @@ COPY pom.xml .
 # Make mvnw executable
 RUN chmod +x mvnw
 
-# Download dependencies (cache)
+# Download dependencies (offline)
 RUN ./mvnw dependency:go-offline
 
-# Copy the rest of the project
+# Copy source code
 COPY src ./src
 
-# Build the project
+# Build the project (skip tests)
 RUN ./mvnw clean package -DskipTests
 
 # Expose port
