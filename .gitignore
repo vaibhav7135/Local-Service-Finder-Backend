@@ -1,8 +1,23 @@
-HELP.md
+# Local environment variables
+.env
+
+# Log files
+*.log
+
+# Compiled output
 target/
+
+# Maven wrapper jar
 .mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
 
 ### STS ###
 .apt_generated
